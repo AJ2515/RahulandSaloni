@@ -240,19 +240,19 @@ $(document).ready(function () {
 /********************** Extras **********************/
 
 // Google map
-function initMap() {
-    var location = {lat: 27.68424268300805, lng: 85.31930926544638};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: location,
-        scrollwheel: false
-    });
+// function initMap() {
+//     var location = {lat: 27.68424268300805, lng: 85.31930926544638};
+//     var map = new google.maps.Map(document.getElementById('map-canvas'), {
+//         zoom: 15,
+//         center: location,
+//         scrollwheel: false
+//     });
 
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
-}
+//     var marker = new google.maps.Marker({
+//         position: location,
+//         map: map
+//     });
+// }
 
 function initBBSRMap() {
     var la_fiesta = {lat: 27.68424268300805, lng: 85.31930926544638};
