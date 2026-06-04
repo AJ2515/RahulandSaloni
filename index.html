@@ -321,12 +321,12 @@
                 </a>
             </div>
             <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img\roka\IMG_4917.jpeg">
+                <a class="fancybox" rel="group" href="img\roka\IMG_3324.jpg">
                     <div class="img-wrap">
                         <div class="overlay">
                             <i class="fa fa-search"></i>
                         </div>
-                        <img src="img\roka\IMG_4917_sm.jpg" alt=""/>
+                        <img src="img\roka\IMG_3324_sm.jpg" alt=""/>
                     </div>
                 </a>
             </div>
@@ -367,11 +367,34 @@
     </div>-->
 </section>
 
-<section id="video-bg" class="hidden-sm hidden-xs">
+<!-- <section id="video-bg" class="hidden-sm hidden-xs"> -->
+<!-- <section id="video-bg">
     <div id="bgndVideo" class="player"
-         data-property="{videoURL:'https://youtu.be/anvQw9GjSqw',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:80, stopAt:259, opacity:1}">
+         data-property="{videoURL:'https://youtu.be/anvQw9GjSqw',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:80, stopAt:259, opacity:1, useOnMobile:true, stopMovieOnMobile:false}">
     </div>
     <div id="video-content">
+        <h5>Kathmandu</h5>
+        <p>City of Light</p>
+    </div>
+</section> -->
+
+<section id="video-bg" style="position: relative; width: 100%; overflow: hidden;">
+    <div class="video-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
+        <!-- 
+          Using youtube-nocookie.com prevents the "I'm not a robot" block.
+          Adding mute=1, playsinline=1, and controls=0 forces autoplay on iOS/Android.
+        -->
+        <iframe 
+            src="https://www.youtube-nocookie.com/embed/anvQw9GjSqw?autoplay=1&mute=1&loop=1&playlist=anvQw9GjSqw&playsinline=1&controls=0&showinfo=0&rel=0&start=84&end=259" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            style="width: 100vw; height: 56.25vw; min-height: 100%; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"
+            allowfullscreen>
+        </iframe>
+    </div>
+    
+    <div id="video-content" style="position: relative; z-index: 10;">
         <h5>Kathmandu</h5>
         <p>City of Light</p>
     </div>
@@ -445,51 +468,50 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <h3>What are you waiting for?</h3>
-                <p>We would greatly appreciate if you could RSVP before 1st of November '17</p>
+                <h3>Leave Your Blessings</h3>
+                <p>We would love to receive your wishes and blessings!</p>
                 <form id="rsvp-form" class="rsvp-form"
                       action=""
                       method="POST">
                     <div class="row">
+                        <!-- 1. Guest Name -->
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-envelope"></i><input type="email" name="email" class=""
-                                                                     placeholder="Your email"
-                                                                     required>
+                                <i class="fa fa-user"></i>
+                                <input type="text" name="name" class="" placeholder="Your Name" required>
                             </div>
                         </div>
+                        <!-- 2. Guest Email -->
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-user"></i><input name="name" class=""
-                                                                 placeholder="Your name"
-                                                                 required>
+                                <i class="fa fa-envelope"></i>
+                                <input type="email" name="email" class="" placeholder="Your Email (Optional)">
                             </div>
                         </div>
                     </div>
                     <div class="row">
+                        <!-- 3. Blessings / Message -->
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
-                                                                  max="4"
-                                                                  placeholder="Husband/Wife or kids"
-                                                                  required>
+                                <i class="fa fa-comment"></i>
+                                <input type="text" name="message" class="" placeholder="Blessings / Message" required>
                             </div>
                         </div>
+                        <!-- Song Title & Artist -->
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
-                                                                class="" min="0"
-                                                                placeholder="Invite code"
-                                                                required>
+                                <i class="fa fa-music"></i>
+                                <input type="text" name="song" class="" placeholder="Song Request">
                             </div>
                         </div>
                     </div>
+                    <!-- Developer Trick: Hidden Invite Code so you don't have to change your Google Script -->
+                    <input type="hidden" name="invite_code" id="invite_code" value="2515">
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
                     </div>
                     <button class="btn-fill rsvp-btn">
-                        Yes,
-                        that's me!
+                        SEND WISHES
                     </button>
                 </form>
             </div>
